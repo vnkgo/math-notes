@@ -1,0 +1,5 @@
+mnotes.pdf
+*.aux
+*.dvi
+*.log
+*.toc
