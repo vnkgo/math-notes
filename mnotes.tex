@@ -21,6 +21,18 @@
 \geometry{a4paper, hmargin=1.25in, vmargin=1in}
 \pagestyle{headings}
 
+\makeatletter
+\renewcommand\proofname{证明}
+\renewenvironment{proof}[1][\proofname]{
+	\par
+	\pushQED{\qed}
+	\normalfont \topsep6\p@\@plus6\p@ \labelsep1em\relax
+	\trivlist
+	\item[\hskip\labelsep\indent\bfseries #1]\ignorespaces
+}{
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother
 \newenvironment{desclist}{\begin{quote}\begin{compactdesc}}{\end{compactdesc}\end{quote}}
 \newenvironment{enumlist}{\begin{quote}\begin{compactenum}}{\end{compactenum}\end{quote}}
 \newenvironment{itemlist}{\begin{quote}\begin{compactitem}}{\end{compactitem}\end{quote}}
