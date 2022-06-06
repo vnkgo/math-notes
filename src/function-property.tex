@@ -17,26 +17,50 @@
 
 \begin{figure}[htb]
 	\centering
-	\begin{tikzpicture}[scale=0.1]
-		\draw[->] (-10, 0) -- (10, 0);
-		\draw[->] (0, -10) -- (0, 10);
-		\draw[color=blue, domain=0.1:9.8] plot(\x, \x + 1 / \x) node {$y=x+\frac{1}{x}$};
-		\draw[color=blue, domain=-9.8:-0.1] plot(\x, \x + 1 / \x);
-		\draw[color=orange, domain=0.1:9.8] plot(\x, -\x - 1 / \x) node {$y=-x-\frac{1}{x}$};
-		\draw[color=orange, domain=-9.8:-0.1] plot(\x, -\x - 1 / \x);
-	\end{tikzpicture}
-	\begin{tikzpicture}[scale=0.1]
-		\draw[->] (-10, 0) -- (10, 0);
-		\draw[->] (0, -10) -- (0, 10);
-		\draw[color=blue, domain=0.09:10] plot(\x, \x - 1 / \x) node {$y=x-\frac{1}{x}$};
-		\draw[color=blue, domain=-10:-0.09] plot(\x, \x - 1 / \x);
-	\end{tikzpicture}
-	\begin{tikzpicture}[scale=0.1]
-		\draw[->] (-10, 0) -- (10, 0);
-		\draw[->] (0, -10) -- (0, 10);
-		\draw[color=orange, domain=0.09:10] plot(\x, -\x + 1 / \x) node {$y=-x+\frac{1}{x}$};
-		\draw[color=orange, domain=-10:-0.09] plot(\x, -\x + 1 / \x);
-	\end{tikzpicture}
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=0.1]
+			\draw[->] (-10, 0) -- (10, 0);
+			\draw[->] (0, -10) -- (0, 10);
+			\draw[color=blue, domain=0.1:9.8] plot(\x, \x + 1 / \x);
+			\draw[color=blue, domain=-9.8:-0.1] plot(\x, \x + 1 / \x);
+		\end{tikzpicture}
+		\caption{$y=1+\frac{1}{x}$}
+		\label{fig:figure-of-tick-functions-a}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=0.1]
+			\draw[->] (-10, 0) -- (10, 0);
+			\draw[->] (0, -10) -- (0, 10);
+			\draw[color=orange, domain=0.1:9.8] plot(\x, -\x - 1 / \x);
+			\draw[color=orange, domain=-9.8:-0.1] plot(\x, -\x - 1 / \x);
+		\end{tikzpicture}
+		\caption{$y=-1-\frac{1}{x}$}
+		\label{fig:figure-of-tick-functions-b}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=0.1]
+			\draw[->] (-10, 0) -- (10, 0);
+			\draw[->] (0, -10) -- (0, 10);
+			\draw[color=blue, domain=0.09:10] plot(\x, \x - 1 / \x);
+			\draw[color=blue, domain=-10:-0.09] plot(\x, \x - 1 / \x);
+		\end{tikzpicture}
+		\caption{$y=1-\frac{1}{x}$}
+		\label{fig:figure-of-tick-functions-c}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\begin{tikzpicture}[scale=0.1]
+			\draw[->] (-10, 0) -- (10, 0);
+			\draw[->] (0, -10) -- (0, 10);
+			\draw[color=orange, domain=0.09:10] plot(\x, -\x + 1 / \x);
+			\draw[color=orange, domain=-10:-0.09] plot(\x, -\x + 1 / \x);
+		\end{tikzpicture}
+		\caption{$y=-1+\frac{1}{x}$}
+		\label{fig:figure-of-tick-functions-d}
+	\end{subfigure}
 	\caption{参量取不同值时耐克函数的图像}
 	\label{fig:figure-of-tick-functions}
 \end{figure}
@@ -44,15 +68,15 @@
 然后我们可以得出耐克函数的性质：
 
 \begin{itemlist}
-	\item $a^+,b^+$是一、三象限的耐克函数
-	\item $a^-,b^-$是二、四象限的耐克函数
-	\item $a^-,b^+$是双增函数
-	\item $a^+,b^-$是双减函数
+	\item $a^+,b^+$是一、三象限的耐克函数（如图\ref{fig:figure-of-tick-functions-a}）
+	\item $a^-,b^-$是二、四象限的耐克函数（如图\ref{fig:figure-of-tick-functions-b}）
+	\item $a^+,b^-$是双增函数（如图\ref{fig:figure-of-tick-functions-c}）
+	\item $a^-,b^+$是双减函数（如图\ref{fig:figure-of-tick-functions-d}）
 \end{itemlist}
 
 再看一眼函数图像，$a$、$b$同号时在各个象限内有极值点，接下来将推导出这个点的坐标：
 
-\begin{quote}
+\begin{proof}
 	根据基本不等式得：\[ax+\frac{b}{x}\geq2\sqrt{ab}\]
 
 	此时不等号右边即极值点的纵坐标，代入原式解方程：
@@ -63,7 +87,7 @@
 	\end{split}\]
 
 	可以得到耐克函数在第一象限内的顶点坐标为$(\sqrt{\frac{b}{a}},2\sqrt{ab})$，其它象限只需在对应的地方添负号即可。
-\end{quote}
+\end{proof}
 
 \subsection{幂函数}
 在初中我们学过了反比例函数、二次函数，它们都是幂函数的一种。其解析式为：\[y=x^a\]其中$a=\frac{p}{q}$，$p,q\in\mathbb{Z}$。
@@ -154,30 +178,24 @@
 
 求函数某一点导数值的公式如下\footnote{极限的求法不是重点，故不介绍。所以请自己领悟（笑）}：\[f'(x_0)=\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h}\]其几何意义是$y=f(x)$在点$P(x_0, f(x_0))$处切线的斜率。
 
-\begin{quote}
-	使用计算器的$\frac{d}{dx}$功能，可以直接求出导数值（需要处于“计算”模式下）。
-\end{quote}
-
 知道了函数某一点处的斜率，我们就可以根据下面的公式：\[y-f(x_0)=f'(x_0)(x-x_0)\]求出该点的切线方程。
 
 \begin{example}
 	利用导数的定义求$y=x^2$在$x=1$处的导数$f'(1)$，并求此函数在$x=1$时的切线方程
-
-	\begin{quote}
-		先套公式得导数值：\[f'(1)=\lim_{h\rightarrow 0}\frac{(1+h)^2-1}{h}=\lim_{h\rightarrow 0}h+2=2\]
-		然后求得切线方程：\[y-1=2(x-1)\Rightarrow y=2x-1\]
-	\end{quote}
 \end{example}
+\begin{proof}[解]
+	先套公式得导数值：\[f'(1)=\lim_{h\rightarrow 0}\frac{(1+h)^2-1}{h}=\lim_{h\rightarrow 0}h+2=2\]
+	然后求得切线方程：\[y-1=2(x-1)\Rightarrow y=2x-1\qedhere\]
+\end{proof}
 
 将求导数值的公式稍作修改，就可以得到导函数的定义求法：\[f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}\]
 
 \begin{example}
 	用定义求$f(x)=x^2$的导函数
-
-	\begin{quote}
-		这道例题很简单，只需带入公式即可：\[f'(x)=\lim_{h\rightarrow 0}\frac{(x+h)^2-x^2}{h}=\lim_{h\rightarrow 0}2x+h=2x\]
-	\end{quote}
 \end{example}
+\begin{proof}[解]
+	这道例题很简单，只需带入公式即可：\[f'(x)=\lim_{h\rightarrow 0}\frac{(x+h)^2-x^2}{h}=\lim_{h\rightarrow 0}2x+h=2x\qedhere\]
+\end{proof}
 
 \subsection{求导函数}
 在上文，我们求出了$y=x^2$的导函数。使用定义求法当然可以求出很多函数的导函数。不过由于知识水平有限，更多函数的导函数是算不出来的，所以下面这个列表整理了基础函数的导函数：
@@ -210,15 +228,15 @@
 
 \begin{example}
 	求$y=\log_2x$的导数
-
-	\begin{quote}
-		\[\begin{aligned}
-			y'&=(\log_2x)'=(\frac{\ln x}{\ln2})' \\
-			  &=(\frac{1}{\ln2}\cdot\ln x)'=\frac{1}{x\ln2}
-		\end{aligned}\]
-		注意$\frac{1}{\ln2}$是一个常数，可以提出。
-	\end{quote}
 \end{example}
+\begin{proof}[解]
+	运用换底公式和导数的除法得：
+	\[\begin{aligned}
+		y'&=(\log_2x)'=(\frac{\ln x}{\ln2})' \\
+		  &=(\frac{1}{\ln2}\cdot\ln x)'=\frac{1}{x\ln2}
+	\end{aligned}\]
+	注意$\frac{1}{\ln2}$是一个常数，可以提出。
+\end{proof}
 
 \noindent\dotfill
 
@@ -231,9 +249,36 @@
 		(\tan x)'&=\sec^2x \\
 		(\cot x)'&=-\csc^2x \\
 		(\sec x)'&=\tan x\cdot\sec x \\
-		(\csc x)'&=-\cot x\cdot\csc x \\
+		(\csc x)'&=-\cot x\cdot\csc x
 	\end{aligned}
 \]
 
+\begin{example}
+	求$y=\sin2x$的导函数
+\end{example}
+\begin{proof}[解]
+	依照上述求三角函数的导函数的方法可得：
+	\[\begin{aligned}
+		y'&=(\sin2x)'=2(\sin x\cos x)' \\
+		  &=2[(\sin x)'\cos x+\sin x(\cos x)'] \\
+		  &=2(\cos^2x-\sin^2x)=2\cos2x
+	\end{aligned}\qedhere\]
+\end{proof}
+
 \subsubsection{复合函数的导数}
-刚刚我们求过了$y=\sin2x$的导函数，这明显太麻烦了。
+刚刚我们求过了$y=\sin2x$的导函数，这明显太麻烦了。对于这类可以复合的函数，我们可以使用下面的方法求导。
+
+若$y=F'(x)$可复合成$u=g(x)$和$y=f(u)$，那么$F'(x)=g'(x)f'(u)$，注意最后$u$要换回$x$。
+
+\begin{example}
+	求$y=\sin2x$的导函数
+\end{example}
+\begin{proof}[解]
+	该函数可复合成如下函数：
+	\[\begin{aligned}
+		&u=2x \\
+		&y=\sin u \\
+	\end{aligned}\]
+
+	则该函数的导函数为：\[y'=(2x)'(\sin u)'=2\cos u=2\cos 2x\qedhere\]
+\end{proof}
