@@ -2,4 +2,5 @@ mnotes.pdf
 *.aux
 *.dvi
 *.log
+*.out
 *.toc
