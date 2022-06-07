@@ -1,7 +1,7 @@
 \chapter{数理分析}
-乍一看这个“数理分析”的标题感觉怪怪的，究竟什么是数理分析？在本章的最后有介绍，这是一种数学思想。
+乍一看这个“数理分析”的标题感觉怪怪的，究竟什么是数理分析？在本章的最后有介绍，这是一种重要的数学思想。
 
-在本章中，您将学会求解不等式、求代数式的最值和值域以及解方程，它们是数理分析的基本操作。
+在本章中，您将学会解不等式、求代数式的最值值域以及解方程。
 
 \section{不等式}
 在初中我们仅仅学了几种不等式的解法，这些很显然是不够的。在这里我们将学习更多的，以及奇奇怪怪的不等式的解法。
@@ -25,7 +25,7 @@
 	转换为不等式的解集：\[x\in[-4,-1]\qedhere\]
 \end{proof}
 
-$\Delta\leq0$的情况太麻烦了，我们可以选择画出不等式对应二次函数的图像后再给出解集（无非就是$\mathbb{R}$或$\varnothing$）。
+$\Delta\leq0$的情况太麻烦了，我们可以选择画出不等式对应二次函数的图像后再给出解集（无非就是一个解、$\mathbb{R}$或$\emptyset$）。
 
 \subsubsection{分式不等式}
 在初中我们也学习了分式方程的解法，千万不要和解分式不等式搞混了。
@@ -99,3 +99,36 @@ $\Delta\leq0$的情况太麻烦了，我们可以选择画出不等式对应二�
 	\item[若剩两个未知数] 则可求范围
 	\item[若剩超过两个未知数] 则此题还有变数（可能是条件还没有找到，可能需要等待一个巧合，可能是双变量等等）
 \end{desclist}
+
+在有多个字母的情况下（尤其是涉及到复数），使用数理分析可快速的找到解题思路。
+
+\begin{example}
+	已知复数$z=a+bi(a,b\in\mathbb{R})$，若存在实数$t$，使$\bar{z}=\frac{2+4i}{t}-3ati$成立
+	\begin{enumlist}
+	\item 求证$2a+b$为定值
+	\item 若$\lvert z-2\rvert<a$，求$\lvert z\rvert$的取值范围
+	\end{enumlist}
+\end{example}
+\begin{proof}[解小题1]
+		先进行数理分析：
+			\[\bar{z}=\cdots-3ati\Rightarrow
+			\begin{cases}
+				F_1(a,b,t)=0 \\
+				F_2(a,b,t)=0
+			\end{cases}
+			\Rightarrow F_3(a,b)=0\Rightarrow b=F_4(a)
+			\]
+
+		赋值：\[a-bi=\frac{2}{t}+\frac{4}{t}i-3ati\]
+
+		列虚系数方程：
+		\[\begin{cases}
+			a=\frac{2}{t} \\
+			b=\frac{4}{t}-3at
+		\end{cases}\]
+
+		解得：
+		\[-b=\frac{4}{\frac{2}{a}}-3a\cdot\frac{2}{a}\Rightarrow2a+b=6\]
+
+		$\therefore2a+b$为定值
+\end{proof}
