@@ -156,15 +156,15 @@
     \begin{tikzpicture}
         \draw[->] (-2, 0) -- (2, 0);
         \draw[->] (0, -2) -- (0, 2);
-        \filldraw (-1, 0.5) circle [radius=1pt] (0, 1.2) circle [radius=1pt] (1, 0.8) circle [radius=1pt];
         \draw[color=blue,domain=-2:2] plot (\x, -0.55*\x*\x+0.15*\x+1.2);
         \draw[color=red,domain=-1.2:-0.8] plot (\x, -0.55*\x*\x+0.15*\x+1.2);
+		\filldraw (-1, 0.5) circle (1pt) (0, 1.2) circle (1pt) (1, 0.8) circle (1pt);
     \end{tikzpicture}
     \begin{tikzpicture}
         \draw[->] (-2, 0) -- (2, 0);
         \draw[->] (0, -2) -- (0, 2);
-        \filldraw (-1, 0.5) circle [radius=1pt] (0, 1.2) circle [radius=1pt] (1, 0.8) circle [radius=1pt];
         \draw[color=orange,domain=-1.26346:1.2423] plot (\x, 2.1667*\x*\x*\x-0.55*\x*\x-2.01667*\x+1.2);
+		\filldraw (-1, 0.5) circle (1pt) (0, 1.2) circle (1pt) (1, 0.8) circle (1pt);
     \end{tikzpicture}
     \caption{描点法作出的两种截然不同的图像}
     \label{fig:two-different-function-figure}
@@ -296,6 +296,23 @@
 	则该函数的导函数为：\[y'=(2x)'(\sin u)'=2\cos u=2\cos 2x\qedhere\]
 \end{proof}
 
+利用对数恒等式得到$a^x=e^{\ln a^x}=e^{x\ln a}$，然后可利用复合函数求导得指数函数的导数（这里不设例题）。其公式为：\[(a^x)'=a^x\ln a\]
+
+\begin{example}
+	求$y=2^{2x+1}$的导函数
+\end{example}
+\begin{proof}[解]
+	公式只能求$2^x$的导数，不能求$2^{2x+1}$，所以应该使用复合函数求导。
+
+	该函数可复合成如下函数：
+	\[\begin{aligned}
+		&u=2x+1 \\
+		&y=2^u \\
+	\end{aligned}\]
+
+	使用乘法公式得导函数：\[y'=(2x+1)'(2^u)'=2\ln 2\cdot2^u=2\ln2\cdot2^{2x+1}\qedhere\]
+\end{proof}
+
 \subsection{利用导函数研究函数性质}
 导函数反应了原函数的增减情况，我们可以使用导函数间接研究函数性质。
 
@@ -327,7 +344,7 @@
 
 	再求驻点：\[3x^2+2x-1\Rightarrow x=-1\text{或}\frac{1}{3}\]
 
-	驻点将定义域分成三段，求导数值的符号：
+	驻点将定义域分成三段，求各段导数值的符号：
 	\[\begin{aligned}
 		(-\infty,-1]&\quad+ \\
 		[-1, \frac{1}{3}]&\quad- \\
@@ -340,3 +357,23 @@
 		\text{减区间：}&[-1,\frac{1}{3}]
 	\end{aligned}\qedhere\]
 \end{proof}
+
+\subsubsection{极值点}
+存在$x=x_1$附近的邻域（$x_1$左边到$x_1$右边的一个很小的区间），使该区间内其它自变量对应的函数值都不大于$f(x_1)$，称$x_1$是函数的极大值点，$f(x_1)$是极大值。
+
+根据上述的定义，求出的极大值点只是局部极大值，不是函数的最大值。观察图\ref{fig:figure-of-quartic-function}，$B$处是局部极大值点，但$A$处才是函数的最值处。
+
+\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\draw[->] (-2, 0) -- (2, 0);
+		\draw[->] (0, -1) -- (0, 3);
+		\draw[blue, domain=-2:1.21] plot(\x, -1 * \x * \x * \x * \x - \x * \x * \x + 2 * \x * \x);
+		\filldraw (-1.443, 2.833) circle (1pt) node[above] {$A$};
+		\filldraw (0.693, 0.397) circle (1pt) node[above] {$B$};
+	\end{tikzpicture}
+	\caption{$-x^4-x^3+2x^2$的图像}
+	\label{fig:figure-of-quartic-function}
+\end{figure}
+
+和上面求单调区间一样，我们还是需要先求出导函数，然后求出驻点，再根据驻点附近$f'(x)$的符号判断此驻点是否为最值点。

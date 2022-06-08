@@ -99,36 +99,36 @@ $\Delta\leq0$的情况太麻烦了，我们可以选择画出不等式对应二�
 	\item[若剩两个未知数] 则可求范围
 	\item[若剩超过两个未知数] 则此题还有变数（可能是条件还没有找到，可能需要等待一个巧合，可能是双变量等等）
 \end{desclist}
+\[\begin{aligned}
+	\begin{cases}
+		f(x,y,z)=0 \\
+		g(x,y,z)=0 \\
+		h(x,y,z)=0
+	\end{cases}&\text{可分别解得$x,y,z$}
+	&\begin{cases}
+		f(x,y,z)=0 \\
+		g(x,y,z)=0
+	\end{cases}&\text{可求$x,y,z$的范围} \\
+	\begin{cases}
+		f(a,b,c,d)=0 \\
+		g(a,b,c,d)=0
+	\end{cases}&\text{未必可解}
+	&\begin{cases}
+		f(x)>0 \\
+		g(x)>0
+	\end{cases}&\text{分别解完后求交集} \\
+	\begin{cases}
+		f(x,y)>0 \\
+		g(x,y)>0
+	\end{cases}&\text{线性规划（同向可加）}
+	&\begin{cases}
+		f(x,y)>0 \\
+		g(x,y)=0
+	\end{cases}&\text{利用$g$消元，可解$f$}
+\end{aligned}\]
+
+注意可解不等式只能含一个变量，不等式组也只能含一个变量，不等式组只是解集的交并关系，不等式不可用来消元。
+
+多变量不等式是线性规划问题（同向可加性是最简线性规划问题）。
 
 在有多个字母的情况下（尤其是涉及到复数），使用数理分析可快速的找到解题思路。
-
-\begin{example}
-	已知复数$z=a+bi(a,b\in\mathbb{R})$，若存在实数$t$，使$\bar{z}=\frac{2+4i}{t}-3ati$成立
-	\begin{enumlist}
-	\item 求证$2a+b$为定值
-	\item 若$\lvert z-2\rvert<a$，求$\lvert z\rvert$的取值范围
-	\end{enumlist}
-\end{example}
-\begin{proof}[解小题1]
-		先进行数理分析：
-			\[\bar{z}=\cdots-3ati\Rightarrow
-			\begin{cases}
-				F_1(a,b,t)=0 \\
-				F_2(a,b,t)=0
-			\end{cases}
-			\Rightarrow F_3(a,b)=0\Rightarrow b=F_4(a)
-			\]
-
-		赋值：\[a-bi=\frac{2}{t}+\frac{4}{t}i-3ati\]
-
-		列虚系数方程：
-		\[\begin{cases}
-			a=\frac{2}{t} \\
-			b=\frac{4}{t}-3at
-		\end{cases}\]
-
-		解得：
-		\[-b=\frac{4}{\frac{2}{a}}-3a\cdot\frac{2}{a}\Rightarrow2a+b=6\]
-
-		$\therefore2a+b$为定值
-\end{proof}
