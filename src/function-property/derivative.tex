@@ -1,151 +1,3 @@
-\chapter{函数性质}
-函数能够很好的描述一样东西的变化规律，从而得出结论（从先前章节的笔记就可以看出）。但这还不够，想要深入分析，我们还是要了解更多的知识。
-
-在本章中，你会学习一些新的函数及其图像。再依靠图像，得出函数的某些性质，并证明之。
-
-\section{函数图像}
-在初中我们学过一次函数、反比例函数以及二次函数，它们的图像就不再介绍了。如记性不好的去请教初中数学老师。
-
-顺带提一句：下文讲述的函数的绘制方法只能画出近似的、粗略的函数图像，这种精度在绝大多数情况下是没有问题的\footnote{例外情况指方程的解的个数问题，前文已经提过。}，您也应该在绝大多数情况下绘制这种图像。
-
-对于三角函数，会在后面的“三角函数”章节提到。这里仅仅画出它们的图像而不研究其性质。
-
-\subsection{耐克函数}
-首先介绍的是耐克函数（或称对勾函数），它的解析式形如：\[y=ax+\frac{b}{x}\]
-
-通过描点法，不难画出它的图像（如图\ref{fig:figure-of-tick-functions}）。
-
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}[b]{0.24\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.1]
-			\draw[->] (-10, 0) -- (10, 0);
-			\draw[->] (0, -10) -- (0, 10);
-			\draw[color=blue, domain=0.1:9.8] plot(\x, \x + 1 / \x);
-			\draw[color=blue, domain=-9.8:-0.1] plot(\x, \x + 1 / \x);
-		\end{tikzpicture}
-		\caption{$y=1+\frac{1}{x}$}
-		\label{fig:figure-of-tick-functions-a}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.24\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.1]
-			\draw[->] (-10, 0) -- (10, 0);
-			\draw[->] (0, -10) -- (0, 10);
-			\draw[color=orange, domain=0.1:9.8] plot(\x, -\x - 1 / \x);
-			\draw[color=orange, domain=-9.8:-0.1] plot(\x, -\x - 1 / \x);
-		\end{tikzpicture}
-		\caption{$y=-1-\frac{1}{x}$}
-		\label{fig:figure-of-tick-functions-b}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.24\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.1]
-			\draw[->] (-10, 0) -- (10, 0);
-			\draw[->] (0, -10) -- (0, 10);
-			\draw[color=blue, domain=0.09:10] plot(\x, \x - 1 / \x);
-			\draw[color=blue, domain=-10:-0.09] plot(\x, \x - 1 / \x);
-		\end{tikzpicture}
-		\caption{$y=1-\frac{1}{x}$}
-		\label{fig:figure-of-tick-functions-c}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.24\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.1]
-			\draw[->] (-10, 0) -- (10, 0);
-			\draw[->] (0, -10) -- (0, 10);
-			\draw[color=orange, domain=0.09:10] plot(\x, -\x + 1 / \x);
-			\draw[color=orange, domain=-10:-0.09] plot(\x, -\x + 1 / \x);
-		\end{tikzpicture}
-		\caption{$y=-1+\frac{1}{x}$}
-		\label{fig:figure-of-tick-functions-d}
-	\end{subfigure}
-	\caption{参量取不同值时耐克函数的图像}
-	\label{fig:figure-of-tick-functions}
-\end{figure}
-
-然后我们可以得出耐克函数图像的性质：
-
-\begin{itemlist}
-	\item $a^+,b^+$是一、三象限的耐克函数（如图\ref{fig:figure-of-tick-functions-a}）
-	\item $a^-,b^-$是二、四象限的耐克函数（如图\ref{fig:figure-of-tick-functions-b}）
-	\item $a^+,b^-$是双增函数（如图\ref{fig:figure-of-tick-functions-c}）
-	\item $a^-,b^+$是双减函数（如图\ref{fig:figure-of-tick-functions-d}）
-\end{itemlist}
-
-再看一眼函数图像，$a$、$b$同号时在各个象限内有极值点，接下来将推导出这个点的坐标：
-
-\begin{proof}
-	根据基本不等式得：\[ax+\frac{b}{x}\geq2\sqrt{ab}\]
-
-	此时不等号右边即极值点的纵坐标，代入原式解方程：
-	\[\begin{split}
-		&ax+\frac{b}{x}=2\sqrt{ab} \\
-		&ax^2-2x\sqrt{ab}+b=0 \\
-		&x=\sqrt{\frac{b}{a}}
-	\end{split}\]
-
-	可以得到耐克函数在第一象限内的顶点坐标为$(\sqrt{\frac{b}{a}},2\sqrt{ab})$，其它象限只需在对应的地方添负号即可。
-\end{proof}
-
-\subsection{幂函数}
-在初中我们学过了反比例函数、二次函数，它们都是幂函数的一种。其解析式为：\[y=x^a(a=\frac{p}{q}\quad p,q\in\mathbb{Z})\]
-
-要绘制幂函数的图像，应把第一象限的图像和其余部分的图像分别绘制。
-
-第一象限的图像如图\ref{fig:figure-of-power-function}所示。
-
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.2]
-			\draw[->] (0, 0) -- (10, 0);
-			\draw[->] (0, 0) -- (0, 10);
-			\draw[color=blue, domain=0.5:10] plot(\x, 5 / \x) node[above] {$a<0$};
-		\end{tikzpicture}
-		\caption{减}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.2]
-			\draw[->] (0, 0) -- (10, 0);
-			\draw[->] (0, 0) -- (0, 10);
-			\draw[color=blue, domain=0:10] plot(\x, \x ^ 0.8) node[above] {$a\in(0,1)$};
-		\end{tikzpicture}
-		\caption{缓慢增}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-		\begin{tikzpicture}[scale=0.2]
-			\draw[->] (0, 0) -- (10, 0);
-			\draw[->] (0, 0) -- (0, 10);
-			\draw[color=blue, domain=0:6.81] plot(\x, \x ^ 1.2) node[right] {$a>1$};
-		\end{tikzpicture}
-		\caption{快速增}
-	\end{subfigure}
-	\caption{幂函数第一象限内的图像}
-	\label{fig:figure-of-power-function}
-\end{figure}
-
-其它象限的图像可按照下面的流程绘出：
-\[\begin{cases}
-	\text{$q$为偶数} & \text{只有第一象限图像} \\
-	\text{$q$为奇数} & \text{判断$p$}
-	\begin{cases}
-		\text{$p$为奇数} & \text{函数为奇函数} \\
-		\text{$p$为偶数} & \text{函数为偶函数}
-	\end{cases}
-\end{cases}\]
-
-\section{反函数}
-我们知道，将某一个特定的值代入函数的自变量（即$x$）可以求出因变量（即$y$）的值。那已知$y$求$x$呢？解方程即可。
-
-那我们就可以更进一步，直接用$y$来表示$x$，那就是\textbf{反函数}了。
-
-由于函数需要$x$对应一个$y$，所以我们可以得到$x$、$y$\textbf{一一对应}是反函数存在的充要条件。
-
 \section{导数}
 在之前的笔记中，单调性可以描述一个函数在某一区间的增减性。但它具有局限性：我们只能知道一个大体的情况（增、减或非单调），而不能知道它的具体增减量为何。
 
@@ -175,7 +27,7 @@
 
 综上可以看出：过去研究的函数及其性质存在不足。故需要引入新的东西，叫做\textbf{导数}\footnote{“导数”即导函数，函数某一点处的斜率称为“导数值”。}。
 
-求函数某一点导数值的公式如下\footnote{极限的求法不是重点，故不介绍。所以请自己领悟（笑）}：\[f'(x_0)=\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h}\]其几何意义是$y=f(x)$在点$P(x_0, f(x_0))$处切线的斜率。
+求函数某一点导数值的公式如下\footnote{极限的求法不是重点，故不介绍。所以请自己领悟（笑）}：\[f'(x_0)=\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h}\]其几何意义是$y=f(x)$在点$(x_0, f(x_0))$处切线的斜率。
 
 知道了函数某一点处的斜率，我们就可以根据下面的公式：\[y-f(x_0)=f'(x_0)(x-x_0)\]求出该点的切线方程。
 
@@ -317,7 +169,7 @@
 
 上面提到过，驻点是导数值为$0$的点，在这个点上函数既不增也不减。以驻点为切入点研究函数性质正合适。
 
-高中数学涉及的函数性质有：单调性、对称性、周期性以及最值值域。求单调区间及值域是要画图的，它们可以用导数来求。
+高中数学涉及的函数性质有：单调性、对称性、周期性以及最值值域。不过根据导数的性质，它可以求单调区间及最值值域。
 
 \subsubsection{单调性}
 导函数嘛，本来就是表示函数斜率的变化情况的，非常适合用来求单调性。
@@ -378,9 +230,9 @@
 和上面求单调区间一样，我们还是需要先求出导函数，然后求出驻点，再根据驻点附近$f'(x)$的符号判断此驻点是否为最值点。
 
 \subsubsection{研究函数图像}\label{sec:mathsAnalysis-derivative-studyPorpertyOfFunction-figureOfFunction}
-在上文，我们知道了如何用导函数求出原函数的单调区间以及极值点，这足以画出一个函数图像了（当然是不太精确的图像，但是关键的部分已经具备）。它常常用来求最值值域问题。
+在上文，我们知道了如何用导函数求出原函数的单调区间以及极值点，这足以画出一个函数图像了（当然是不太精确的图像，不过关键的部分已经具备）。它常常用来求最值值域问题。
 
-画函数图像嘛，也没啥技巧。端点和极值点描一下，根据单调性把这些点连起来就是了。
+画函数图像嘛，也没啥技巧。端点和极值点描一下，无定义点处画渐近线，根据单调性把这些点连起来就是了。
 
 \begin{example}
 	用一张长宽都是$10$的正方形白纸，四周分别减去一块变长为$x$的正方形，折成一个简易垃圾桶，求该简易垃圾桶的最大容积
