@@ -46,17 +46,6 @@ $\Delta\leq0$的情况太麻烦了，我们可以选择画出不等式对应二�
 顾名思义，值域就是函数因变量（即$y$）的取值范围。
 
 \subsection[本质]{本质（有图）}
-\begin{wrapfigure}{r}[8pt]{0pt}
-	\begin{tikzpicture}[scale=0.4]
-		\draw[->] (-1, 0) -- (4, 0);
-		\draw[->] (0, -1.2) -- (0, 4);
-		\draw[blue, domain=-1.23:3.23] plot(\x, \x * \x - 2 * \x);
-		\draw[red, domain=0:3] plot(\x, \x * \x - 2 * \x);
-	\end{tikzpicture}
-	\caption{画图、描深}
-	\label{fig:figure-of-a-function-and-its-domain}
-\end{wrapfigure}
-
 一个函数有图像，画图然后在图上看出值域就行了：
 
 \begin{enumlist}
@@ -68,8 +57,20 @@ $\Delta\leq0$的情况太麻烦了，我们可以选择画出不等式对应二�
 \begin{example}
 	求$y=x^2-2x, x\in(0,3)$的值域
 \end{example}
-\begin{proof}[解]	
-	先作如图\ref{fig:figure-of-a-function-and-its-domain}的函数图像，描深定义域。
+\begin{proof}[解]
+	先作如图\ref{fig:figure-of-a-function-and-its-domain}的函数图像\footnote{把求值域过程中的函数图像画出来就非常不好看，我们只画这一次。}，描深定义域。
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[scale=0.4]
+			\draw[->] (-1, 0) -- (4, 0);
+			\draw[->] (0, -1.2) -- (0, 4);
+			\draw[blue, domain=-1.23:3.23] plot(\x, \x * \x - 2 * \x);
+			\draw[red, domain=0:3] plot(\x, \x * \x - 2 * \x);
+		\end{tikzpicture}
+		\caption{画图、描深}
+		\label{fig:figure-of-a-function-and-its-domain}
+	\end{figure}
 
 	可得其最低点纵坐标为$-1$（是函数的顶点），两端点的纵坐标分别为$0$和$3$，故该函数值域为$[-1,3)$。
 \end{proof}

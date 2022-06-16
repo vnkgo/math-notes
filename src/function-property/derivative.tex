@@ -229,6 +229,19 @@
 
 和上面求单调区间一样，我们还是需要先求出导函数，然后求出驻点，再根据驻点附近$f'(x)$的符号判断此驻点是否为最值点。
 
+\begin{example}
+	求$y=\frac{1}{3}x^3-x+2$的极值点和极值
+\end{example}
+\begin{proof}[解]
+	先求导函数得：\[y'=x^2-1\]
+
+	解方程得驻点：\[x^2-1=0\Rightarrow x=\pm1\]
+
+	计算各段的导数值可得增区间为$(-\infty,-1]\text{和}[1,+\infty)$，减区间$[-1,1]$，将驻点代入原函数即可得极大值。
+
+	$\therefore$当$x=-1$时，有极大值$\frac{8}{3}$；当$x=1$时，有极大值$\frac{4}{3}$。
+\end{proof}
+
 \subsubsection{研究函数图像}\label{sec:mathsAnalysis-derivative-studyPorpertyOfFunction-figureOfFunction}
 在上文，我们知道了如何用导函数求出原函数的单调区间以及极值点，这足以画出一个函数图像了（当然是不太精确的图像，不过关键的部分已经具备）。它常常用来求最值值域问题。
 
@@ -261,3 +274,7 @@
 
 	$\therefore$该简易垃圾桶的最大容积为$\frac{2000}{27}$。
 \end{proof}
+
+\begin{example}
+	求$y=\frac{x^2-4x+12}{x-1}$在$x\in[0,+\infty)$的值域
+\end{example}

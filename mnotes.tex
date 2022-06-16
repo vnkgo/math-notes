@@ -4,7 +4,6 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage[dvipdfmx]{geometry}
-\usepackage{geometry}
 \usepackage{graphicx}
 \usepackage[toc]{multitoc}
 \usepackage{paralist}
@@ -27,16 +26,28 @@
 \renewenvironment{proof}[1][\proofname]{
 	\par
 	\pushQED{\qed}
-	\normalfont \topsep6\p@\@plus6\p@ \labelsep1em\relax
+	\normalfont\topsep6\p@\@plus6\p@\labelsep1em\relax
 	\trivlist
 	\item[\hskip\labelsep\indent\bfseries #1]\ignorespaces
 }{
 	\popQED\endtrivlist\@endpefalse
 }
 \makeatother
-\newenvironment{desclist}{\begin{quote}\begin{compactdesc}}{\end{compactdesc}\end{quote}}
-\newenvironment{enumlist}{\begin{quote}\begin{compactenum}}{\end{compactenum}\end{quote}}
-\newenvironment{itemlist}{\begin{quote}\begin{compactitem}}{\end{compactitem}\end{quote}}
+\newenvironment{desclist}{
+	\begin{quote}\begin{compactdesc}
+}{
+	\end{compactdesc}\end{quote}
+}
+\newenvironment{enumlist}{
+	\begin{quote}\begin{compactenum}
+}{
+	\end{compactenum}\end{quote}
+}
+\newenvironment{itemlist}{
+	\begin{quote}\begin{compactitem}
+}{
+	\end{compactitem}\end{quote}
+}
 \newtheorem{example}{例}[section]
 
 \title{{\Huge 高中数学笔记}}
