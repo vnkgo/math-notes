@@ -1,20 +1,15 @@
 \documentclass[a4paper, UTF8]{ctexbook}
 
+\usepackage{asymptote}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage[dvipdfmx]{geometry}
+\usepackage{geometry}
 \usepackage{graphicx}
-\usepackage[toc]{multitoc}
-\usepackage{paralist}
+\usepackage[colorlinks=true]{hyperref}
 \usepackage{subcaption}
-\usepackage{tabularx}
-\usepackage{tcolorbox}
-\usepackage{tkz-euclide}
 \usepackage{wrapfig}
 \usepackage{xcolor}
-\usepackage[hidelinks]{hyperref}
-
 
 \pagestyle{headings}
 
@@ -30,35 +25,28 @@
 	\popQED\endtrivlist\@endpefalse
 }
 \makeatother
-\newenvironment{desclist}{
-	\begin{quote}\begin{compactdesc}
-}{
-	\end{compactdesc}\end{quote}
-}
-\newenvironment{enumlist}{
-	\begin{quote}\begin{compactenum}
-}{
-	\end{compactenum}\end{quote}
-}
-\newenvironment{itemlist}{
-	\begin{quote}\begin{compactitem}
-}{
-	\end{compactitem}\end{quote}
-}
+
 \newtheorem{example}{例}[section]
 
 \title{{\Huge 高中数学笔记}}
-\author{\textit{Jason Bowen Zheng}}
+\author{郑}
 
 \begin{document}
+
+\begin{asydef}
+	import settings;
+	batchMask = false;
+	interactiveMask = true;
+	batchView = false;
+	interactiveView = true;
+	prc = false;
+\end{asydef}
+
 \frontmatter
 \maketitle
 \input{src/intro.tex}
-\tableofcontents
-\clearpage
-\mainmatter
-\raggedbottom
-\input{src/maths-analysis.tex}
-\input{src/function-property/main.tex}
-\input{src/solid-geometry/main.tex}
+% \tableofcontents
+% \clearpage
+% \mainmatter
+% \raggedbottom
 \end{document}

@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+xelatex mnotes.tex
+xelatex mnotes.tex
+rm *.aux *.log *.out *.pre
