@@ -1,4 +1,4 @@
-\documentclass[a4paper, UTF8]{ctexbook}
+\documentclass[a4paper, openany, UTF8]{ctexbook}
 
 \usepackage{asymptote}
 \usepackage{amsmath}
@@ -7,46 +7,53 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage[colorlinks=true]{hyperref}
+\usepackage[toc]{multitoc}
+\usepackage{paralist}
 \usepackage{subcaption}
+\usepackage{svg}
 \usepackage{wrapfig}
 \usepackage{xcolor}
 
-\pagestyle{headings}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\geometry{inner=1in,outer=1.25in}
 
-\makeatletter
-\renewcommand\proofname{证明}
-\renewenvironment{proof}[1][\proofname]{
-	\par
-	\pushQED{\qed}
-	\normalfont\topsep6\p@\@plus6\p@\labelsep1em\relax
-	\trivlist
-	\item[\hskip\labelsep\indent\bfseries #1]\ignorespaces
-}{
-	\popQED\endtrivlist\@endpefalse
-}
-\makeatother
+\setcounter{tocdepth}{1}
 
+\newtheorem{axiom}{公理}[chapter]
+\newtheorem{corollary}{推论}[chapter]
 \newtheorem{example}{例}[section]
+\newtheorem{lexample}{引例}[chapter]
+\newtheorem{theorem}{定理}[chapter]
+
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
 
 \title{{\Huge 高中数学笔记}}
 \author{郑}
 
 \begin{document}
+	\begin{asydef}
+		import settings;
+		batchMask = false;
+		interactiveMask = true;
+		batchView = false;
+		interactiveView = true;
+		prc = false;
+	\end{asydef}
 
-\begin{asydef}
-	import settings;
-	batchMask = false;
-	interactiveMask = true;
-	batchView = false;
-	interactiveView = true;
-	prc = false;
-\end{asydef}
+	\frontmatter
+	\maketitle
 
-\frontmatter
-\maketitle
-\input{src/intro.tex}
-% \tableofcontents
-% \clearpage
-% \mainmatter
-% \raggedbottom
+	\input{src/intro.tex}
+
+	\tableofcontents
+	\clearpage
+	\mainmatter
+	\raggedbottom
+
+	\part{计数原理}
+	\input{src/combinatorics/principles.tex}
+	\input{src/combinatorics/binomial-theorem.tex}
 \end{document}
