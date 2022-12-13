@@ -6,14 +6,28 @@
 \subsection{弧度制}
 在之前很长一段时间，我们使用的都是角度制，它将一个周角分为了360等分，不过继续运用角度制会显得不够简洁。所以我们引入了\textbf{弧度}（radian），它认为一个周角是$2\pi$弧度。
 
-从角度制转换为弧度制很简单，乘以$\dfrac{\pi}{180}$即可；以弧度表示角度，则乘以$\dfrac{180}{\pi}$。所以$1\mathrm{rad}=57.296^\circ$。
+从角度制转换为弧度制很简单，乘以$\dfrac{\pi}{180}$即可；以弧度表示角度，则乘以$\dfrac{180}{\pi}$，由此可知$1\mathrm{rad}=57.296^\circ$。
 
-弧度的单位是$\mathrm{rad}$，不过通常不写单位。
-
-\subsection{任意角的定义}
+弧度的单位写作$\mathrm{rad}$，不过通常不写单位。
 
 \subsection{三角比的定义}
+在过去我们使用直角三角形一个锐角的对边、邻边和斜边定义一个锐角的三角比。
+
+\begin{figure}[htb]
+	\centering
+	\begin{asy}
+		write("Creating 'fig:unit-circle'");
+		size(6cm, 6cm);
+
+		draw((-1.5, 0) -- (1.5, 0), Arrow, L=Label("$x$", position=EndPoint));
+		draw((0, -1.5) -- (0, 1.5), Arrow, L=Label("$y$", position=EndPoint));
+		draw(unitcircle);
+	\end{asy}
+	\caption{单位圆}
+	\label{fig:unit-circle}
+\end{figure}
 
 \section{公式}
 
 \section{化简}
+

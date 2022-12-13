@@ -1,5 +1,7 @@
 @echo off
 
 xelatex mnotes.tex
+asy mnotes-*.asy
 xelatex mnotes.tex
-del *.aux *.log *.out *.pre *.toc
+xelatex mnotes.tex
+del *.asy *.aux *.log *.out mnotes-*.pdf *.pre *.toc

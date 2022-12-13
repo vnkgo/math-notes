@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
 xelatex mnotes.tex
+asy mnotes-*.asy
 xelatex mnotes.tex
-rm *.aux *.log *.out *.pre *.toc
+xelatex mnotes.tex
+rm *.asy *.aux *.log *.out mnotes-*.pdf *.pre *.toc
