@@ -3,4 +3,5 @@ mnotes.pdf
 *.dvi
 *.log
 *.out
+*.pre
 *.toc

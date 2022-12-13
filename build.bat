@@ -2,4 +2,4 @@
 
 xelatex mnotes.tex
 xelatex mnotes.tex
-del *.aux *.log
+del *.aux *.log *.out *.pre *.toc
