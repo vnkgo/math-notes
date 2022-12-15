@@ -11,25 +11,25 @@
 弧度的单位写作$\mathrm{rad}$，不过通常不写单位。
 
 \subsection{三角比的定义}
-我们用如图\ref{fig:unit-circle}定义任意角的三角比。
+我们用如图\ref{fig:unit-circle}的单位圆来定义任意角的三角比。
 
 \begin{figure}[htb]
 	\centering
-	\begin{asy}
-		write("Creating 'fig:unit-circle'");
-		size(8cm, 8cm);
+    \begin{asy}
+        write("asy: Generating 'fig:unit-circle'");
+        size(6cm, 6cm);
 
-        draw((-6/5, 0) -- (6/5, 0), Arrow, L=Label("$x$", position=EndPoint));
-        draw((0, -6/5) -- (0, 6/5), Arrow, L=Label("$y$", position=EndPoint));
+        draw((-1.2, 0) -- (1.2, 0), Arrow, L=Label("$x$", position=EndPoint));
+        draw((0, -1.2) -- (0, 1.2), Arrow, L=Label("$y$", position=EndPoint));
         draw(unitcircle);
         draw((0, 0) -- (1/2, sqrt(3)/2), linewidth(1.5), L=Label("$r$", position=MidPoint, align=N));
         fill((0, 0) -- (1/2, 0) -- (1/2, sqrt(3)/2) -- cycle, palegreen);
-        draw((0, 0) -- (1/2, 0), blue+1);
+        draw((0, 0) -- (0.5, 0), blue+1);
         draw((1/2, 0) -- (1/2, sqrt(3)/2), red+1);
-        draw(arc((0, 0), r=1/3, angle1=0, angle2=60), arrow=Arrow(TeXHead), L=Label("$\theta$", position=MidPoint, align=W));
+        draw(arc((0, 0), r=0.3, angle1=0, angle2=60), arrow=Arrow(TeXHead), L=Label("$\theta$", position=Relative(0.3), align=W));
 
         label("$P$", (1/2, sqrt(3)/2), align=NE);
-	\end{asy}
+    \end{asy}
 	\caption{单位圆}
 	\label{fig:unit-circle}
 \end{figure}
