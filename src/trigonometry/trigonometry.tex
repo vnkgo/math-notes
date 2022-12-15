@@ -11,7 +11,9 @@
 弧度的单位写作$\mathrm{rad}$，不过通常不写单位。
 
 \subsection{三角比的定义}
-我们用如图\ref{fig:unit-circle}的单位圆来定义任意角的三角比。
+我们用如图\ref{fig:unit-circle}的单位圆来定义任意角的三角比。虽然我们放弃了使用直角三角形定义三角比，但图中绿色部分仍然是一个三角形，只不过两条直角边（蓝边、红边）是要考虑正负的。
+
+与锐角三角比类似，我们可以定义终边$r$与$x$轴正半轴夹角$\theta$的三角比
 
 \begin{figure}[htb]
 	\centering
@@ -35,5 +37,51 @@
 \end{figure}
 
 \section{公式}
+在以下4个小节中，我们将了解4类在三角学中很有用的公式。
+
+\subsection{变名公式}
+当角度不变，只改变三角比的名称时，应该使用这组公式。
+
+第一部分由3个含平方的等式构成
+\begin{gather}
+	\sin^2\alpha+\cos^2\alpha=1 \label{equ:trig-1} \\
+	\tan^2\alpha+1=\sec^2\alpha \label{equ:trig-2}\\
+	1+\cot^2\alpha=\csc^2\alpha \label{equ:trig-3}
+\end{gather}
+
+第二部分由4个分式组成
+\begin{gather}
+	\tan\alpha=\frac{\sin\alpha}{\cos\alpha} \label{equ:trig-4} \\
+	\cot\alpha=\frac{1}{\tan\alpha} \label{equ:trig-5} \\
+	\sec\alpha=\frac{1}{\cos\alpha} \label{equ:trig-6} \\
+	\csc\alpha=\frac{1}{\sin\alpha} \label{equ:trig-7}
+\end{gather}
+
+使用以上公式要考虑结果的正负，我们也可以使用直角三角形变名。
+
+\subsection{变角公式}
+变角公式有如下常用的5个小类。
+
+\paragraph{和差角公式}
+$\sin$和$\cos$的和差角公式是最基础的，以下所有公式都由它俩推得
+\begin{gather}
+	\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta \label{equ:trig-8} \\
+	\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta \label{equ:trig-9}
+\end{gather}
+
+用式子\eqref{equ:trig-8}除以式子\eqref{equ:trig-9}，每项同除$\cos\alpha\cos\beta$，可得到$\tan$的和差角公式
+\begin{gather}
+	\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}\label{equ:trig-10}
+\end{gather}
+
+\paragraph{倍角公式}
+通过将和差角公式中的$\alpha\pm\beta$替换成$\alpha+\alpha=2\alpha$，可得到倍角公式
+
+\paragraph{降幂公式}
+\paragraph{半角公式}
+\paragraph{万能公式}
+
+\subsection{诱导公式}
+\subsection{辅助角公式}
 
 \section{化简}
