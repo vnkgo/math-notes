@@ -3,4 +3,6 @@
 > 由于记性差这个不可抗因素，近期传授点知识点会优先收录。
 
 ## 编译
-视情况执行`build`和`build.bat`完成编译。
+视情况执行`build`或`build.bat`文件完成编译。
+
+有大量插图采用`Asymptote`绘制，请[安装之](https://sourceforge.net/projects/asymptote/files/)。

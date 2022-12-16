@@ -13,8 +13,6 @@
 \subsection{三角比的定义}
 我们用如图\ref{fig:unit-circle}的单位圆来定义任意角的三角比。虽然我们放弃了使用直角三角形定义三角比，但图中绿色部分仍然是一个三角形，只不过两条直角边（蓝边、红边）是要考虑正负的。
 
-与锐角三角比类似，我们可以定义终边$r$与$x$轴正半轴夹角$\theta$的三角比
-
 \begin{figure}[htb]
 	\centering
     \begin{asy}
@@ -35,6 +33,19 @@
 	\caption{单位圆}
 	\label{fig:unit-circle}
 \end{figure}
+
+与锐角三角比类似，我们可以定义终边$r$与$x$轴正半轴夹角$\theta$的三角比
+\begin{align*}
+    \sin\theta=\frac{y}{r}\quad & \cos\theta=\frac{x}{r} \\
+    \tan\theta=\frac{y}{x}\quad & \cot\theta=\frac{x}{y} \\
+    \sec\theta=\frac{r}{y}\quad & \csc\theta=\frac{r}{x}
+\end{align*}
+
+不难看出，当$r=1$时，红线的长度即$\theta$角的正弦值，称为\textbf{正弦线}；同样，蓝线的长度是$\theta$角的余弦值，为\textbf{余弦线}。
+
+所以，圆周上一点$P$可表示为\[P(r\cos\theta,r\sin\theta)\]
+
+至于各个特殊角的三角比的值嘛，也是可以轻易算出来的，限于篇幅就不放在这里了，反正各位的教科书上也是有的。
 
 \section{公式}
 在以下4个小节中，我们将了解4类在三角学中很有用的公式。
@@ -60,7 +71,7 @@
 使用以上公式要考虑结果的正负，我们也可以使用直角三角形变名。
 
 \subsection{变角公式}
-变角公式有如下常用的5个小类。
+变角公式有如下常用的5类。
 
 \paragraph{和差角公式}
 $\sin$和$\cos$的和差角公式是最基础的，以下所有公式都由它俩推得
@@ -71,15 +82,46 @@ $\sin$和$\cos$的和差角公式是最基础的，以下所有公式都由它�
 
 用式子\eqref{equ:trig-8}除以式子\eqref{equ:trig-9}，每项同除$\cos\alpha\cos\beta$，可得到$\tan$的和差角公式
 \begin{gather}
-	\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}\label{equ:trig-10}
+	\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta} \label{equ:trig-10}
 \end{gather}
 
 \paragraph{倍角公式}
 通过将和差角公式中的$\alpha\pm\beta$替换成$\alpha+\alpha=2\alpha$，可得到倍角公式
+\begin{gather}
+    \sin2\alpha=2\sin\alpha\cos\alpha \label{equ:trig-11} \\
+    \cos2\alpha=\cos^2\alpha-\sin^2\alpha=2\cos^2\alpha-1=1-2\sin^2\alpha \label{equ:trig-12} \\
+    \tan2\alpha=\frac{2\tan\alpha}{1-\tan^2\alpha} \label{equ:trig-13}
+\end{gather}
+
+公式\eqref{equ:trig-12}的三连等是通过公式\eqref{equ:trig-1}得来的。
 
 \paragraph{降幂公式}
+降幂公式通过倍角公式\eqref{equ:trig-11}和\eqref{equ:trig-12}得到
+\begin{gather}
+    \sin\alpha\cos\alpha=\frac{1}{2}\sin2\alpha \label{equ:trig-14} \\
+    \sin^2\alpha=\frac{1-\cos2\alpha}{2} \label{equ:trig-15} \\
+    \cos^2\alpha=\frac{1+\cos2\alpha}{2} \label{equ:trig-16}
+\end{gather}
+
 \paragraph{半角公式}
+通过给降幂公式代入$\dfrac{\alpha}{2}$并开根，即可得到半角公式
+\begin{gather}
+    \sin\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{2}} \label{equ:trig-17} \\
+    \cos\frac{\alpha}{2}=\pm\sqrt{\frac{1+\cos\alpha}{2}} \label{equ:trig-18} \\
+    \tan\frac{\alpha}{2}=\pm\sqrt{\frac{1+\cos\alpha}{1-\cos\alpha}}=\frac{\sin\alpha}{1+\cos\alpha}=\frac{1-\cos\alpha}{\sin\alpha} \label{equ:trig-19}
+\end{gather}
+
+公式\eqref{equ:trig-19}可巧记为“$\sin$在一边，母加子减”。
+
 \paragraph{万能公式}
+也叫\textbf{正切半角公式}（tangent half-angle formula），它将名称都统一为$\tan$
+\begin{gather}
+    \tan\frac{\alpha}{2}=\frac{2\tan\frac{\alpha}{2}}{1-\tan^2\frac{\alpha}{2}} \label{equ:trig-20} \\
+    \sin\frac{\alpha}{2}=\frac{2\tan\frac{\alpha}{2}}{1+\tan^2\frac{\alpha}{2}} \label{equ:trig-21} \\
+    \cos\frac{\alpha}{2}=\frac{1-\tan^2\frac{\alpha}{2}}{1+\tan^2\frac{\alpha}{2}} \label{equ:trig-22}
+\end{gather}
+
+“万能公式”当然很有用，只不过在高中时期还没有显现它的价值罢了。
 
 \subsection{诱导公式}
 \subsection{辅助角公式}
