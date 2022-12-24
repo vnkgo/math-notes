@@ -39,14 +39,27 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
 
 您或许会画出如图\ref{fig:calc-slope}所示的函数图像，那接下来我们就可以使用由两条直角边$\Delta x$和$\Delta y$组成的直角三角形来计算斜率。
 
-二次函数上$A$点处的斜率是我们要求的，可同时令抛物线上的$B$点慢慢靠近$A$点，这样直角三角形会越来越小，结果也会变得精确。我们就可以这样表示斜率\[k=\frac{(1+\Delta x)^2-1^2}{\Delta x}\]
+二次函数上$A$点处的斜率是我们要求的，我们可以让抛物线上的$B$点慢慢靠近$A$点，这样直角三角形会越来越小，结果也会变得精确。我们就可以写出式子\eqref{equ:calc-slope}来表示斜率
+\begin{gather}
+    k=\frac{(1+\Delta x)^2-1^2}{\Delta x} \label{equ:calc-slope}
+\end{gather}
 
-给$\Delta x$多次赋值，我们不难发现最后它会收敛到2，就可以得到$f(x)=x^2$在$x=1$时的斜率是2。
+给$\Delta x$多次赋值，我们不难发现最后它会收敛到2，由此可知$f(x)=x^2$在$x=1$时的斜率是2。
 \begin{align*}
     \Delta x=0.1\quad & k=2.1 \\
     \Delta x=0.01\quad & k=2.01 \\
     \Delta x=0.001\quad & k=2.001 \\
 \end{align*}
 
-\section{公式}
-\section{运用}
+好，我们算完了，感觉很简单吧！\textbf{导数}（derivative）就是这样，研究函数在某一点附近的变化率。我们刚刚寻找函数某点导数的过程称为\textbf{求导}（differentiation）。
+
+\begin{example}
+    $f(x)=x^2$的导函数是什么？
+\end{example}
+
+\begin{proof}[解]
+    ...\qedhere
+\end{proof}
+
+% TODO: \section{公式}
+% TODO: \section{运用}
