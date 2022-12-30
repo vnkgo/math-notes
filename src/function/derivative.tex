@@ -44,7 +44,7 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
     k=\frac{(1+\Delta x)^2-1^2}{\Delta x} \label{equ:calc-slope}
 \end{gather}
 
-给$\Delta x$多次赋值，我们不难发现最后它会收敛到2，由此可知$f(x)=x^2$在$x=1$时的斜率是2。
+给$\Delta x$多次赋值，我们不难发现最后它会收敛到2，由此可知$f(x)=x^2$在$x=1$处的斜率是2。
 \begin{align*}
     \Delta x=0.1\quad & k=2.1 \\
     \Delta x=0.01\quad & k=2.01 \\
@@ -53,13 +53,7 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
 
 好，我们算完了，感觉很简单吧！\textbf{导数}（derivative）就是这样，研究函数在某一点附近的变化率。我们刚刚寻找函数某点导数的过程称为\textbf{求导}（differentiation）。
 
-\begin{example}
-    $f(x)=x^2$的导函数是什么？
-\end{example}
-
-\begin{proof}[解]
-    ...\qedhere
-\end{proof}
+同时，为了避免每次求导都要考虑函数图像，求$f(x)$在$x=x_0$处的导数$f'(x_0)$有公式\[f'(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}{h}\]这和我们刚刚得到的式子\eqref{equ:calc-slope}很像，只不过我们使用了极限的表示方法。
 
 % TODO: \section{公式}
 % TODO: \section{运用}
