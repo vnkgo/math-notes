@@ -26,12 +26,10 @@ fig1.savefig("chart1.pdf")
 
 # 频率分布折线图
 m, n = np.histogram(data, bins=8, range=(151, 183))
-y = list(m); y.insert(0, 0); y.append(0)
-y = [i / len(data) / 4 for i in y]
-x = []
-for i in n[:-1]:
-    x.append(i + 2)
-x.insert(0, x[0] - 4); x.append(x[-1] + 4)
+y = [0] + [i / len(data) / 4 for i in list(m)] + [0]
+x = [i + 2 for i in n[:-1]]
+x.insert(0, x[0] - 4)
+x.append(x[-1] + 4)
 fig2, axes2 = plt.subplots()
 axes2.set_xticks(range(147, 188, 4))
 axes2.set_xlabel("身高")

@@ -1,10 +1,16 @@
 \chapter{统计}
 
+\section{基本概念}
+
+\section{抽样}
+\subsection{分层随机抽样}
+\subsection{系统随机抽样}
+
 \section{统计图表}
 \subsection{频率分布直方图}
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.5\linewidth]{src/images/chart1.pdf}
+	\includegraphics[width=0.6\linewidth]{src/images/chart1.pdf}
 	\caption{身高的频率分布直方图}
 	\label{fig:histogram}
 \end{figure}
@@ -12,11 +18,12 @@
 \subsection{频率分布折线图}
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.5\linewidth]{src/images/chart2.pdf}
+	\includegraphics[width=0.6\linewidth]{src/images/chart2.pdf}
 	\caption{身高的频率分布折线图}
 	\label{fig:line-chart}
 \end{figure}
 
+\subsection{茎叶图}
 \subsection{散点图}
 
 \section{统计量}
@@ -30,7 +37,25 @@
 	\bar{x}=\frac{1}{n}\sum_{i=0}^n x_i \label{equ:mean-1}
 \end{gather}
 
+同时，当数据量很大且重复率高的情况下，有
+\begin{gather}
+	\bar{x}=\frac{1}{n}\sum_{i=0}^k x_if_i \label{equ:mean-2}
+\end{gather}
+其中$f_i$是$x_i$的频数。
+
 \subsection{方差和标准差}
+在初中我们已经知道了这两个统计量描述的是数据的离散程度，数据越离散，那么这组数据的方差和标准差就越大。
+
+我们同样使用求和符号来表示\textbf{方差}（variance）
+\begin{gather}
+	s^2=\frac{1}{n}\sum_{i=0}^{n} (x_i-\bar{x})^2 \label{equ:variance}
+\end{gather}
+
+\textbf{标准差}（standard deviation）是方差算数平方根的结果
+\begin{gather}
+	s=\sqrt{\frac{1}{n}\sum_{i=0}^{n} (x_i-\bar{x})^2} \label{equ:standard-deviation}
+\end{gather}
+
 \subsection{中位数和众数}
 \subsection{百分位数}
 \subsection{随机变量的分布特征}
