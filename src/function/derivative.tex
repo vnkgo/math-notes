@@ -10,7 +10,7 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
 
 那就再问一个进阶的问题：当$x=1$时，$f(x)=x^2$的斜率为多少呢？
 
-作为一个不知道微积分为何物的高中生，您决定试一试，透过斜率的定义\footnote{简单来说，斜率$k=\dfrac{\Delta y}{\Delta x}$，即垂直方向的变化量与水平方向的变化量的比值。}来解决这个问题。
+作为一个不知道求导为何物的高中生，您决定试一试，透过斜率的定义\footnote{简单来说，斜率$k=\dfrac{\Delta y}{\Delta x}$，即垂直方向的变化量与水平方向的变化量的比值。}来解决这个问题。
 
 \begin{figure}[htb]
     \centering
@@ -44,16 +44,41 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
     k=\frac{(1+\Delta x)^2-1^2}{\Delta x} \label{equ:calc-slope}
 \end{gather}
 
-给$\Delta x$多次赋值，我们不难发现最后它会收敛到2，由此可知$f(x)=x^2$在$x=1$处的斜率是2。
-\begin{align*}
-    \Delta x=0.1\quad & k=2.1 \\
-    \Delta x=0.01\quad & k=2.01 \\
-    \Delta x=0.001\quad & k=2.001 \\
-\end{align*}
+给$\Delta x$多次赋值，我们不难发现最后它会收敛到2，不难得出$f(x)=x^2$在$x=1$处的斜率是2。
+\begin{gather*}
+    \Delta x=0.1 \quad k=2.1 \\
+    \Delta x=0.01 \quad k=2.01 \\
+    \Delta x=0.001 \quad k=2.001
+\end{gather*}
 
 好，我们算完了，感觉很简单吧！\textbf{导数}（derivative）就是这样，研究函数在某一点附近的变化率。我们刚刚寻找函数某点导数的过程称为\textbf{求导}（differentiation）。
 
-同时，为了避免每次求导都要考虑函数图像，求$f(x)$在$x=x_0$处的导数$f'(x_0)$有公式\[f'(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}{h}\]这和我们刚刚得到的式子\eqref{equ:calc-slope}很像，只不过我们使用了极限的表示方法。
+同时，为了避免每次求导都要考虑函数图像，求$f(x)$在$x=x_0$处的导数$f'(x_0)$有公式
+\begin{gather}
+    f'(x_0)=\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}{h} \label{equ:fpx0}
+\end{gather}
+这和我们刚刚得到的式子\eqref{equ:calc-slope}很像，只不过我们使用了极限的表示方法。
 
-% TODO: \section{公式}
+通常情况下，函数在定义域中任意一处都存在导数，导数值随着自变量的变化可看作是函数。把公式\eqref{equ:fpx0}稍加改变，则$f(x)$的导函数$f'(x)$可如下计算
+\begin{gather}
+    f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \label{equ:fpx}
+\end{gather}
+
+最后，我想讲一下“求导”和“微分”的区别。虽然在一些情况下它俩的含义相同，不过“微分”是一种思想，例如把函数图像看成是无数小线段的集合；“求导”则是一种运算，对函数的增减性进行定量描述。
+
+\section{公式及运算}
+在之前，我们了解了导数是如何计算的，还求了$f(x)=x^3$的导函数。如果不怕麻烦，我们也可以求出另外一些函数的导函数，不过还有一些基础函数（如$\sin x$和$\log_ax$）的导函数以目前的水平还无能为力，不过它们的导数往往也是很重要的。
+
+以下，是基础函数的导数（好心提示：这些公式要背的）
+\begin{align}
+    (C)'&=0 & (x^a)'&=ax^{a-1} \label{equ:df-1} \\
+    (a^x)'&=a^x\ln a & (\log_ax)'&=\frac{1}{x\ln a} \label{equ:df-2} \\
+    (\sin x)'&=\cos x & (\cos x)'&=-\sin x \label{equ:df-3}
+\end{align}
+
+对于公式\eqref{equ:df-2}来说，当$a=e$时可将其作为特殊情况记忆
+\begin{align*}
+    (e^x)'&=e^x & (\ln x)'=\frac{1}{x}
+\end{align*}
+
 % TODO: \section{运用}
