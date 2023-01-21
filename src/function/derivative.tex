@@ -64,6 +64,24 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
     f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \label{equ:fpx}
 \end{gather}
 
+\begin{example}
+    求$f(x)=x^3$的导函数。
+\end{example}
+
+\begin{proof}[解]
+    我们直接代入公式\eqref{equ:fpx}即可
+    \begin{align*}
+        f'(x)&=\lim_{h\to0}\frac{(x+h)^3-x^3}{h} \\
+             &=\lim_{h\to0}\frac{3hx^2+3h^2x+h^3}{h} \\
+             &=\lim_{h\to0}3x^2+3hx+h^2 \\
+             &=3x^2
+    \end{align*}
+
+    如果对以上求极限的操作感到疑惑的话，我们要求出当$h$趋近于0时一个式子的值，不过这会出现“除以0”的问题，所以进行了这样的操作（不管听没听懂，往下看就是了）。
+
+    以上，我们得出$(x^3)'=3x^2$\qedhere
+\end{proof}
+
 最后，我想讲一下“求导”和“微分”的区别。虽然在一些情况下它俩的含义相同，不过“微分”是一种思想，例如把函数图像看成是无数小线段的集合；“求导”则是一种运算，对函数的增减性进行定量描述。
 
 \section{公式及运算}
@@ -80,5 +98,11 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
 \begin{align*}
     (e^x)'&=e^x & (\ln x)'=\frac{1}{x}
 \end{align*}
+
+导数的四则运算与代数相比差异是巨大的
+\begin{gather}
+    (af+bg)'=af'+bg' \label{equ:drule-1} \\
+    (fg)'=f'g+fg' \quad (\frac{f}{g})'=\frac{f'g-fg'}{g^2} \label{equ:drule-2}
+\end{gather}
 
 % TODO: \section{运用}
