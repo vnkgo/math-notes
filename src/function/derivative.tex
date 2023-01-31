@@ -59,6 +59,8 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
 \end{gather}
 这和我们刚刚得到的式子\eqref{equ:calc-slope}很像，只不过我们使用了极限的表示方法。
 
+我们采用在函数的右上角加上一短撇作为导数的记号，这是18世纪时拉格朗日发明的。
+
 通常情况下，函数在定义域中任意一处都存在导数，导数值随着自变量的变化可看作是函数。把公式\eqref{equ:fpx0}稍加改变，则$f(x)$的导函数$f'(x)$可如下计算
 \begin{gather}
     f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h} \label{equ:fpx}
@@ -101,8 +103,9 @@ YouTube频道3Blue1Brown有10部讲述“微积分的本质”的视频，我会
 
 导数的四则运算与代数相比差异是巨大的
 \begin{gather}
-    (af+bg)'=af'+bg' \label{equ:drule-1} \\
-    (fg)'=f'g+fg' \quad (\frac{f}{g})'=\frac{f'g-fg'}{g^2} \label{equ:drule-2}
+    \big(af(x)+bg(x)\big)'=af'(x)+bg(x)' \label{equ:drule-1} \\
+    \big(f(x)g(x)\big)'=f'(x)g(x)+f(x)g'(x) \label{equ:drule-2} \\
+	\left(\frac{f(x)}{g(x)}\right)'=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)} \label{equ:drule-3}
 \end{gather}
 
 % TODO: \section{运用}
